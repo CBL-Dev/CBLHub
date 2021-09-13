@@ -1,0 +1,86 @@
+:root {
+    --header-height: 72px;
+}
+
+*{
+    text-decoration: none;
+}
+
+body {
+    background-color: grey;
+}
+
+header {
+    background-color: darkgreen;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 8px 32px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.nav-icon > i {
+    color: white;
+    font-size: 2em;
+}
+
+#inpNavToggle:checked ~ .nav {
+    display: flex;
+}
+
+.nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    padding: 0 32px;
+    background: grey;
+    box-sizing: border-box;
+}
+
+.nav ul li {
+    display: inline-block;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav ul li a {
+    font-family: Comfortaa;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+}
+
+.nav ul li a:hover {
+    opacity: 0.8;
+}
+
+@media screen and (min-width: 767px) {
+    .nav-icon {
+        display: none;;
+    }
+
+    .nav {
+        display: initial;
+        position: static;
+        width: unset;
+        height: unset;
+        padding: unset;
+        background: transparent;
+    }
+
+    .nav ul li {
+        border-bottom: none;
+    }
+
+    .nav ul li:not(:last-of-type) {
+        margin-right: 24px;
+    }
+}
